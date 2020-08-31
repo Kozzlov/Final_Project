@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <title>Project Managment</title>
+</head>
+
+<body class="body">
+<h1 class="header">Task management</h1>
+<div class="table">
+    <h1 class="sub-header" th:text="${project.getTitle()}"></h1>
+    <table>
+        <thead>
+        <tr>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Team</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task : ${project.getCopyTasks()}">
+            <td th:text="${task.getTaskDescription()}"></td>
+            <td th:text="${task.getProductionPrice()}"></td>
+            <td th:switch="${task.get_team() != null}">
+                <span th:case="true" th:text="${task.get_team().getTeamName()}"></span>
+                <span th:case="*">Not yet assigned</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

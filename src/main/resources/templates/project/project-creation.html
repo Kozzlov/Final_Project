@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/add_page.css}">
+    <title>Add Project</title>
+</head>
+<body class="body">
+<div class="body">
+    <h1 class="sub-header">Add project</h1>
+    <form action="#" th:action="@{/create_project}" th:object="${project}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <input th:field="*{title}" type="text" placeholder="Title" required>
+        <input th:field="*{description}" type="text" placeholder="Description" required>
+        <input th:field="*{budget}" type="number" placeholder="Budget" required>
+        <input name="dateTime" type="text" placeholder="Due date" required>
+        <select name="manager" class="input-text selector" required>
+            <option disabled selected value>Select manager</option>
+            <option
+                    th:each="manager : ${managers}"
+                    th:value="${manager.getId()}"
+                    th:text="${manager.getLastName()}">
+            </option>
+        </select>
+        <select name="client" class="input-text selector" required>
+            <option disabled selected value>Select client</option>
+            <option
+                    th:each="client : ${clients}"
+                    th:value="${client.getId()}"
+                    th:text="${client.getClientContact()}">
+            </option>
+        </select>
+        <button>Add project</button>
+    </form>
+</div>
+</body>
+</html>

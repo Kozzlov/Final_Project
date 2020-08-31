@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <title>Task</title>
+</head>
+<body class="body">
+    <h1 class="header">Task management</h1>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <td>Task</td>
+                    <td>Project</td>
+                    <td>Team</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="task : ${tasks}">
+                    <td th:text="${task.getTaskDescription()}"></td>
+                    <td th:text="${task.get_project().getTitle()}"></td>
+                    <td th:text="${task.get_team().getTeamName()}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

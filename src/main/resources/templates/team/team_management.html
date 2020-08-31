@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" th:href="@{/css/project.css}">
+        <!-- Bootstrap CSS -->
+    </head>
+<body class="body">
+<h1 class="header">Team participants</h1>
+<div class="table">
+    <h1 class="sub-header" th:text="${team.getTeamName()}"></h1>
+    <h1 class="sub-header">Designers</h1>
+    <table>
+        <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Hourly Rate</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="designer : ${team.getCopyDesigners()}">
+            <td th:text="${designer.getLastName()}"></td>
+            <td th:text="${designer.getMainContact()}"></td>
+            <td th:switch="${designer.getHourly_rate()}">"</td>
+        </tr>
+        </tbody>
+    </table>
+    <h1 class="sub-header">IT <Specialists></Specialists></h1>
+    <table>
+        <thead>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Specialization</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="specialist : ${team.getCopyItSpecialists()}">
+            <td th:text="${specialist.getLastName()}"></td>
+            <td th:text="${specialist.getMainContact()}"></td>
+            <td th:switch="${specialist.getSpecialization()}">"</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+table {
+    border-collapse: collapse;
+    margin-top: 2.5vh;
+    margin-bottom: 5vh;
+}
+
+td {
+    border: 2px solid slategrey;
+    background-color: slategrey;
+    color: #FFFFFF;
+    font-size: 1vw;
+    padding: 1.3vw 1vw;
+    font-weight: 300;
+    max-width: 12vw;
+}
+
+thead > tr > td {
+    font-weight: bold;
+}

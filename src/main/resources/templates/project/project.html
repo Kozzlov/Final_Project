@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <title>Team</title>
+</head>
+<body class="body">
+<h1 class="header">Project management</h1>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Supervisor</td>
+                <td>Client</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="project : ${projects}">
+                <td th:text="${project.getTitle()}"></td>
+                <td th:text="${project.getManager().getLastName()}"></td>
+                <td th:text="${project.getClient().getClientContact()}"></td>
+                <td>
+                    <a th:href="@{/project_management/{id}(id=${project.getId()})}">Open project</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

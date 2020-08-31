@@ -1,0 +1,42 @@
+.header {
+    margin-top: 10vh;
+    width: 80%;
+    height: 10%;
+    text-align: center;
+    background: slategrey;
+    color: white;
+    font-size: 25px;
+}
+.sub-header {
+    margin-top: 3vh;
+    text-align: center;
+    color: slategrey;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select{
+    width: 100%;
+}
+
+

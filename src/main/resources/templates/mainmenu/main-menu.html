@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Save Employee</title>
+</head>
+<body>
+    <h1 class="header">Project manager</h1>
+    <div id="mainHolder">
+        <div class="div3">
+            <section class="text-holder">
+                <h1 class="itemTextGig">Project:</h1>
+                <h1 class="itemTextSmall">Create project and specify needed information</h1>
+            </section>
+            <section class="button-holder">
+                <button class="button"><a href="/create_project">Add</a></button>
+                <button class="button"><a href="/project">List all</a></button>
+            </section>
+        </div>
+        <div class="div3">
+            <section class="text-holder">
+                <h1 class="itemTextGig">Task:</h1>
+                <h1 class="itemTextSmall">Create task, assign team to it, add it to project</h1>
+            </section>
+            <section class="button-holder">
+                <button class="button"><a href="/create_task">Add</a></button>
+                <button class="button"><a href="/task">List all</a></button>
+            </section>
+        </div>
+        <div class="div3">
+            <section class="text-holder">
+                <h1 class="itemTextGig">Team:</h1>
+                <h1 class="itemTextSmall">Assemble teams, according to task requirements</h1>
+            </section>
+            <section class="button-holder">
+                <button class="button"><a href="/create_team">Add</a></button>
+                <button class="button"><a href="/team">List all</a></button>
+            </section>
+        </div>
+        <div class="div3">
+            <section class="text-holder">
+                <h1 class="itemTextGig">People:</h1>
+                <h1 class="itemTextSmall">View employees and add them to team</h1>
+            </section>
+            <section class="button-holder">
+                <button class="button"><a href="/add_to_team">Add to team</a></button>
+                <button class="button"><a href="/people">List all</a></button>
+            </section>
+        </div>
+    </div>
+    <h1 class="footer"></h1>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+    <title>Team</title>
+</head>
+<body class="body">
+<h1 class="header">Personal list</h1>
+<div class="table">
+    <table>
+        <thead>
+        <tr>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>Email</td>
+            <td>Main contact</td>
+            <td>Additional contact</td>
+            <td>Busy</td>
+            <td>Salary</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="designer : ${designers}">
+            <td th:text="${designer.getFirstName()}"></td>
+            <td th:text="${designer.getLastName()}"></td>
+            <td th:text="${designer.getEmail()}"></td>
+            <td th:text="${designer.getMainContact()}"></td>
+            <td th:text="${designer.getAdditionalContact()}"></td>
+            <td th:switch="${designer.getIfBusy()}">
+                <span th:case="true">Busy</span>
+                <span th:case="*">Free</span>
+            </td>
+            <td th:text="${designer.getSalary()}"></td>
+        </tr>
+        <tr th:each="it : ${its}">
+            <td th:text="${it.getFirstName()}"></td>
+            <td th:text="${it.getLastName()}"></td>
+            <td th:text="${it.getEmail()}"></td>
+            <td th:text="${it.getMainContact()}"></td>
+            <td th:text="${it.getAdditionalContact()}"></td>
+            <td th:switch="${it.getIfBusy()}">
+                <span th:case="true">Busy</span>
+                <span th:case="*">Free</span>
+            </td>
+            <td th:text="${it.getSalary()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

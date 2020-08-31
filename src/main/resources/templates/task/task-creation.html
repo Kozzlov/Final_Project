@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/project.css}">
+    <link rel="stylesheet" th:href="@{/css/add_page.css}">
+    <title>Add Project</title>
+</head>
+<body class="body">
+<div class="body">
+    <h1 class="sub-header">Add project</h1>
+    <form action="#" th:action="@{/create_task}" th:object="${task}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <input th:field="*{taskDescription}" type="text" placeholder="Description" required>
+        <input th:field="*{productionPrice}" type="number" placeholder="Production price" required>
+        <select name="project" class="input-text selector" required>
+            <option disabled selected value>Select manager</option>
+            <option
+                    th:each="project : ${projects}"
+                    th:value="${project.getId()}"
+                    th:text="${project.getTitle()}">
+            </option>
+        </select>
+        <select name="team" class="input-text selector" required>
+            <option disabled selected value>Select client</option>
+            <option
+                    th:each="team : ${teams}"
+                    th:value="${team.getId()}"
+                    th:text="${team.getTeamName()}">
+            </option>
+        </select>
+        <button>Add task</button>
+    </form>
+</div>
+</body>
+</html>
